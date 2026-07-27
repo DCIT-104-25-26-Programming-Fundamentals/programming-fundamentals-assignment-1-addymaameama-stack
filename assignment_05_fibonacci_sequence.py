@@ -49,3 +49,53 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def print_fib(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        print(a, end=" ")
+        temp = a + b
+        a = b
+        b = temp
+    print()
+
+
+def check_fib(num):
+    a = 0
+    b = 1
+    while a <= num:
+        if a == num:
+            return True
+        temp = a + b
+        a = b
+        b = temp
+    return False
+
+
+def part_a():
+    print("PART A - FIRST N TERMS")
+    n = int(input("How many terms? "))
+
+    if n <= 0:
+        print("Error: N must be a positive integer.")
+        return
+
+    print("Fibonacci sequence: ", end="")
+    print_fib(n)
+
+
+def part_b():
+    print("PART B - CHECK IF FIBONACCI")
+    num = int(input("Enter a number to check: "))
+
+    result = check_fib(num)
+    # just print based on whether it came back true or false
+    if result == True:
+        print(num, "is a Fibonacci number.")
+    else:
+        print(num, "is NOT a Fibonacci number.")
+
+
+part_a()
+print()
+part_b()
